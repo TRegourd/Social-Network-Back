@@ -11,4 +11,8 @@ router.get("/", function (req, res, next) {
 
 router.put("/:id", Users.updateUser);
 
+//Delete User
+
+router.delete("/:id", Users.deleteUser);
+
 module.exports = router;

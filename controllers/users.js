@@ -15,8 +15,22 @@ const updateUser = async (req, res) => {
   }
 };
 
+const deleteUser = async (req, res) => {
+  if (req.body.userId === req.params.id || req.body.isAdmin) {
+    try {
+      const user = await User.findByIdAndRemove(req.params.id);
+      res.status(200).send(`user ${req.params.id} successfully deleted !`);
+    } catch (err) {
+      return res.status(500).send(err);
+    }
+  } else {
+    res.status(500).send("You can delete only your account !");
+  }
+};
+
 const Users = {
   updateUser,
+  deleteUser,
 };
 
 module.exports = Users;
