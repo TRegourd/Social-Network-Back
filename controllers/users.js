@@ -28,9 +28,27 @@ const deleteUser = async (req, res) => {
   }
 };
 
+const getUser = async (req, res) => {
+  try {
+    console.log("REQ", req.params.id);
+    const user = await User.findById(req.params.id);
+    console.log(user);
+
+    if (user === null) {
+      res.status(404).send("User not found");
+    } else {
+      res.status(200).send(user);
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("error");
+  }
+};
+
 const Users = {
   updateUser,
   deleteUser,
+  getUser,
 };
 
 module.exports = Users;

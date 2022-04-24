@@ -43,25 +43,6 @@ const loginUser = async (req, res) => {
   } else {
     res.status(400).send("Incorrect Login");
   }
-
-  //     .then((result) => {
-  //       if (!result) {
-  //         res.status(404).send("user not found");
-  //       } else {
-  //         user = result;
-
-  //         let matchingPassword = await bcrypt.compare(req.body.password, user.password);
-  // console.log(matchingPassword);
-
-  //         if (req.body.password != user.password) {
-  //           res.status(400).send("wrong password");
-  //         } else {
-  //           res.send(user);
-  //         }
-  //       }
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
 };
 
 const Auth = {
