@@ -23,4 +23,8 @@ router.get("/:id", Users.getUser);
 
 router.put("/follow/:id", Users.followUser);
 
+//UnFollowUser
+
+router.put("/unfollow/:id", Users.unfollowUser);
+
 module.exports = router;
