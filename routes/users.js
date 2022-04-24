@@ -19,4 +19,8 @@ router.delete("/:id", Users.deleteUser);
 
 router.get("/:id", Users.getUser);
 
+//FollowUser
+
+router.put("/follow/:id", Users.followUser);
+
 module.exports = router;
