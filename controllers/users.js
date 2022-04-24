@@ -30,14 +30,14 @@ const deleteUser = async (req, res) => {
 
 const getUser = async (req, res) => {
   try {
-    console.log("REQ", req.params.id);
     const user = await User.findById(req.params.id);
-    console.log(user);
+
+    const { password, updatedAt, ...other } = user._doc;
 
     if (user === null) {
       res.status(404).send("User not found");
     } else {
-      res.status(200).send(user);
+      res.status(200).send(other);
     }
   } catch (err) {
     console.log(err);
