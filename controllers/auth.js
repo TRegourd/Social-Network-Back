@@ -1,6 +1,5 @@
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
-const { is } = require("express/lib/request");
 const saltRounds = 10;
 
 const createNewUser = async (req, res) => {

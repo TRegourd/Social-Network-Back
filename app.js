@@ -23,6 +23,7 @@ dotenv.config({ path: __dirname + "/.env" });
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var authRouter = require("./routes/auth");
+var postRouter = require("./routes/posts");
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use(cookieParser());
 app.use("/", indexRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/posts", postRouter);
 
 app.use(express.static(path.join(__dirname, "public")));
 
